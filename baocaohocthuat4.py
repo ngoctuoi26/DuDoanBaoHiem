@@ -19,19 +19,8 @@ st.subheader("Kết hợp Linear Regression và K-means")
 st.write("Nhập thông tin cá nhân để dự đoán chi phí bảo hiểm và phân nhóm dữ liệu.")
 
 # 2. TẢI DỮ LIỆU HUẤN LUYỆN
-st.sidebar.header("Dữ liệu huấn luyện")
-
-uploaded_file = st.sidebar.file_uploader(
-    "Tải file dữ liệu Train CSV",
-    type=["csv"]
-)
-
-if uploaded_file is None:
-    st.warning("Vui lòng tải lên file Dự đoán chi phí bảo hiểm y tế_train.csv")
-    st.stop()
-
 # Đọc dữ liệu
-df = pd.read_csv(uploaded_file)
+df = pd.read_csv("Dự đoán chi phí bảo hiểm y tế_train.csv")
 
 if "charges" not in df.columns:
     st.error("Dữ liệu phải có cột charges!")
